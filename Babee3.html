@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>For My Love</title>
+
+  <style>
+
+    body {
+
+      background: linear-gradient(to right, #332D56, #4E6688);
+
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: center;
+
+      justify-content: center;
+
+      height: 100vh;
+
+      margin: 0;
+
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+      color: white;
+
+      text-align: center;
+
+      padding: 20px;
+
+    }
+
+    h1 {
+
+      font-size: 3.5rem;
+
+      opacity: 3;
+
+      animation: fadeIn 3s forwards;
+
+    }
+    #warning{
+            color: red;
+    }
+
+    #message {
+
+      font-size: 1.5rem;
+
+      max-width: 600px;
+
+      margin-top: 20px;
+
+      opacity: 0;
+
+    }
+
+    button {
+
+      margin-top: 40px;
+
+      padding: 12px 24px;
+
+      font-size: 1.5rem;
+
+      border: none;
+
+      border-radius: 10px;
+
+      background-color: #4E6688;
+
+      color: white;
+
+      cursor: pointer;
+
+      transition: background 0.3s ease;
+
+    }
+
+    button:hover {
+
+      background-color: #0a77b6;
+
+    }
+
+    @keyframes fadeIn {
+
+      to {
+
+        opacity: 1;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <h1 id="title">IFEMI...</h1>
+  <h3 id="light">Do you want to see how much I love you?</h3>
+  <h3 id="warning">DO NOT OPEN IF YOU WILL BREAK MY HEART SOMEDAYS!</h3>
+
+  <p id="message"></p>
+
+  <button onclick="showLove()">Click to See</button>
+
+  <script>
+
+    const message = `
+
+      Been dying to tell you this for a while. 
+           Truly we might have our up and downs but this relationship has kept on growing stronger, 
+           Every moment with you is a moment I cherish. 
+           I love you so much and I am grateful for every second we spend together. 
+           You are my everything, my love, my life. 
+           I promise to always be there for you, to support you, and to love you unconditionally. 
+           You are the best thing that has ever happened to me and I will always cherish you. 
+           I love you deeply, truly, completely and more than words can say... WILL YOU KEEP BEING MY EVERYTHING?
+    `;
+
+    function showLove() {
+
+      const msgEl = document.getElementById("message");
+
+      msgEl.style.opacity = 1;
+
+      typeMessage(message, msgEl, 0);
+
+    }
+
+    function typeMessage(text, element, i) {
+
+      if (i < text.length) {
+
+        element.innerHTML += text.charAt(i);
+
+        setTimeout(() => typeMessage(text, element, i + 1), 40);
+
+      }
+
+    }
+
+  </script>
+
+</body>
+
+</html>
